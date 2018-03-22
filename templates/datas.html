@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Multi-label classification of peptides</title>
+  <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <link rel="stylesheet"  href="{{ url_for('static', filename='css/new.css') }}">
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+        <div id="logo_text">
+          <!-- class="logo_colour", allows you to change the colour of the text -->
+          <h1><a href="{{ url_for('main') }}">Multilabel Classification of <span class="logo_colour">Peptides</span></a></h1>
+          <h2>Classification of Peptide Activity</h2>
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
+          <li><a href="{{ url_for('main') }}">Home</a></li>
+	     <li><a href="{{ url_for('pred') }}">Activity Predictor</a></li>
+          <li class="selected"><a href="{{ url_for('datas') }}">Dataset</a></li>
+          <li><a href="{{ url_for('help') }}">Help</a></li>
+          <li><a href="{{ url_for('about') }}">About Us</a></li>
+
+        </ul>
+      </div>
+    </div>
+    <div id="site_content">
+
+      <div id="content">
+        <!-- insert the page content here -->
+        <h1>Dataset</h1>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search by ID">
+
+<input type="text" id="SeqInput" onkeyup="mFunction()" placeholder="Search by Name">
+
+
+<div style="width:800px;height:700px;overflow:scroll;background-color:#FCFADD;color:#714D03;scrollbar-base-color:#DEBB07;">
+
+
+
+
+<table id="myTable">
+         <thead>
+            <td>ID</td>
+            <td>Sequence</td>
+            <td>Length</td>
+            <td>BomanIndex</td>
+            <td>Aromaticity</td>
+            <td>AliphaticIndex</td>
+
+<td>InstabilityIndex</td>
+<td>charge</td>
+<td>MW</td>
+<td>H_Eisenberg</td>
+<td>uH_Eisenberg</td>
+<td>H_GRAVY</td>
+<td>uH_GRAVY</td>
+<td>Z3_1</td>
+<td>Z3_2</td>
+<td>Z3_3</td>
+<td>antiviral</td>
+<td>antibacterial</td>
+<td>antifungal</td>
+
+         </thead>
+
+         {% for row in rows %}
+            <tr>
+               <td>{{row["ID"]}}</td>
+               <td>{{row["Sequence"]}}</td>
+               <td> {{ row["Length"]}}</td>
+               <td>{{row['BomanIndex']}}</td>
+<td>{{row['Aromaticity']}}</td>
+<td>{{row['AliphaticIndex']}}</td>
+<td>{{row['InstabilityIndex']}}</td>
+<td>{{row['charge']}}</td>
+<td>{{row['MW']}}</td>
+<td>{{row['H_Eisenberg']}}</td>
+<td>{{row['uH_Eisenberg']}}</td>
+<td>{{row['H_GRAVY']}}</td>
+<td>{{row['uH_GRAVY']}}</td>
+<td>{{row['Z3_1']}}</td>
+<td>{{row['Z3_2']}}</td>
+<td>{{row['Z3_3']}}</td>
+<td>{{row['antiviral']}}</td>
+<td>{{row['antibacterial']}}</td>
+<td>{{row['antifungal']}}</td>
+            </tr>
+         {% endfor %}
+      </table>
+      </div>
+</div>
+</div>
+
+
+
+
+<script>
+function myFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+
+
+
+function mFunction() {
+  // Declare variables
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("SeqInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+
+
+</script>
+
+
+
+
+
+
+    <div id="content_footer"></div>
+    <div id="footer">
+     <a href="http://www.unipune.ac.in/">Pune University</a> | <a href="http://www.viit.ac.in/">VIIT Pune</a>
+    </div>
+  </div>
+</body>
+</html>
+
