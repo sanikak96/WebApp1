@@ -252,13 +252,13 @@ ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
 .form_settings .submit
 { font: 100% arial; 
   border: 1px solid; 
-  width: 99px; 
+  width: 299px; 
   margin: 0 0 0 212px; 
   height: 33px;
   padding: 2px 0 3px 0;
   cursor: pointer; 
-  background: #5B7102; 
-  color: #FFF;}
+  background: red; 
+  color: black;}
 
 .form_settings textarea, .form_settings select
 { font: 100% arial; 
@@ -305,5 +305,4 @@ table tr td
 { background: #F0EFE2;
   color: #47433F;
   border-top: 1px solid #FFF;}
-
 
