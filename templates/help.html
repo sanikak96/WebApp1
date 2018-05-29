@@ -15,7 +15,7 @@
       <div id="logo">
         <div id="logo_text">
           <!-- class="logo_colour", allows you to change the colour of the text -->
-          <h1><a href="{{ url_for('main') }}">Multilabel Classification of <span class="logo_colour">Peptides</span></a></h1>
+          <h1><a href="index.html">Multilabel Classification of <span class="logo_colour">Peptides</span></a></h1>
           <h2>Classification of Peptide Activity</h2>
         </div>
       </div>
@@ -23,15 +23,15 @@
         <ul id="menu">
           <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
           <li><a href="{{ url_for('main') }}">Home</a></li>
-	     <li><a href="{{ url_for('pred') }}">Activity Predictor</a></li>
+	     <li><a href="{{ url_for('predict') }}">Activity Predictor</a></li>
           <li><a href="{{ url_for('datas') }}">Dataset</a></li>
-          <li class="selected"><a href="{{ url_for('help') }}">Help</a></li>
+          <li class="selected"><a href="help.html">Help</a></li>
           <li><a href="{{ url_for('about') }}">About Us</a></li>
-
+          
         </ul>
       </div>
     </div>
-    <div id="site_content">
+   <div id="site_content">
       <div class="sidebar">
         <!-- insert your sidebar items here -->
         <h3>Application Usage</h3>
@@ -47,7 +47,7 @@
           <li><a href="http://www.uniprot.org/">UniProt</a></li>
           <li><a href="http://crdd.osdd.net/servers/avppred/">AVPpred</a></li>
         </ul>
-
+        
       </div>
 
       <div id="content">
@@ -55,10 +55,10 @@
         <h1>A Page</h1>
        <p><strong>What are AMPs (Antimicrobial peptides)? </strong></p>
         <p>Antimicrobial peptides (AMPs), also called host defense peptides (HDPs) are part of the innate immune response found among all classes of life. Fundamental differences exist between prokaryotic and eukaryotic cells that may represent targets for antimicrobial peptides.</p>
-        <p><strong>How to use classifier?</strong></p>
-        <p>There are two sections on the page 1.enter data 2. output. In enter data you have to enter the faste sequence of the peptide.Then after submitting the sequence will get the output that is the activity of peptide gets predicted. There is also option to upload the faste file of sequences. </p>
+        <p><strong>How to use the classifier?</strong></p>
+        <p>There are two sections on the page 1.enter data 2. output. In enter data you have to enter the FASTA sequence of the peptide.Then after submitting the sequence will get the output that is the activity of peptide gets predicted. There is also option to upload the faste file of sequences. </p>
         <p><strong>What is FASTA format?</strong></p>
-        <p> FASTA format is a text-based format for representing either nucleotide sequences or peptide sequences, in which nucleotides or amino acids are represented using single-letter codes.
+        <p> FASTA format is a text-based format for representing either nucleotide sequences or peptide sequences, in which nucleotides or amino acids are represented using single-letter codes. 
         For example :- >SEQUENCE_2
         SATVSEINSETDFVAKNDQFIALTKDTTAHIQSNSLQSVEELHSSTINGVKFEEYLKSQI
         ATIGENLVVRRFATLKAGANGVVNGYIHTNGRVGVVIAAACDSAEVASKSRDLLRQICMH</p>
@@ -66,9 +66,8 @@
     </div>
     <div id="content_footer"></div>
     <div id="footer">
-    <a href="http://www.unipune.ac.in/">Pune University</a> | <a href="http://www.viit.ac.in/">VIIT Pune</a>
+   <a href="http://www.unipune.ac.in/">Pune University</a> | <a href="http://www.viit.ac.in/">VIIT Pune</a>
     </div>
   </div>
 </body>
 </html>
-
