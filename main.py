@@ -1,5 +1,37 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for, flash
+import pandas as pd
+#import pickle
 import sqlite3 as sql
+import numpy as np
+from sklearn.externals import joblib
+#import csv
+import os
+from modlamp.descriptors import PeptideDescriptor, GlobalDescriptor
+from werkzeug import secure_filename
+import matplotlib.pyplot as plt
+from matplotlib.gridspec import GridSpec
+from io import BytesIO
+import base64
+from PyBioMed.PyGetMol.GetProtein import ReadFasta
+from str import *
+from Bio import SeqIO
+from flask import send_file
+
+
+UPLOAD_FOLDER = '/home/sanika/proj/'
+ALLOWED_EXTENSIONS = set(['fasta'])
+
+
+app = Flask(__name__)
+
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.secret_key = 'many random bytes'
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1] in ALLOWED_EXTENSIONS
+
+
 
 
 app = Flask(__name__)
