@@ -23,13 +23,16 @@
         <ul id="menu">
           <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
           <li><a href="{{ url_for('main') }}">Home</a></li>
-	     <li class="selected"><a href="{{ url_for('pred') }}">Activity Predictor</a></li>
+	     <li class="selected"><a href="{{ url_for('predict') }}">Activity Predictor</a></li>
           <li><a href="{{ url_for('datas') }}">Dataset</a></li>
           <li><a href="{{ url_for('help') }}">Help</a></li>
           <li><a href="{{ url_for('about') }}">About Us</a></li>
+	  
 
         </ul>
+
       </div>
+
     </div>
     <div id="site_content">
       <div class="sidebar">
@@ -50,12 +53,20 @@
       </div>
       <div id="content">
 		<H1> Enter your FASTA </H1>
-		<form method="POST" action = "/pred/">
-		     <div class="form-group">
-		         <input type="text" name="seq">
-		     </div>
-		     <input class="btn btn-primary" type="submit" value="submit">
+		<form action="{{url_for('predict')}}" method="POST">
+		     <p>Enter sequence here </p>
+		     <textarea name="seq" cols=50 rows=10></textarea>
+		     <br/>
+		     <input type="submit" class="btn-info" value="predict" style="height: 50px; width: 180px; font-size:20pt; color:white; background-color:green "/>
 		</form>
+		<h1>Upload new File</h1>
+		<form action="{{url_for('upload')}}" method="POST" enctype=multipart/form-data>
+      		<p><input type=file name=file>
+         	<input type=submit value=Upload>
+		
+		</form>
+		
+             
       </div>
     </div>
     <div id="content_footer"></div>
@@ -65,4 +76,3 @@
   </div>
 </body>
 </html>
-
