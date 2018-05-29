@@ -23,7 +23,7 @@
         <ul id="menu">
           <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
           <li><a href="{{ url_for('main') }}">Home</a></li>
-	     <li class="selected"><a href="{{ url_for('pred') }}">Activity Predictor</a></li>
+	     <li class="selected"><a href="{{ url_for('predict') }}">Activity Predictor</a></li>
           <li><a href="{{ url_for('datas') }}">Dataset</a></li>
           <li><a href="{{ url_for('help') }}">Help</a></li>
           <li><a href="{{ url_for('about') }}">About Us</a></li>
@@ -49,9 +49,19 @@
         </ul>
       </div>
       <div id="content">
-        <h1>Your entered sequence is: {{seq}}</h1>
+        
+        <h1>Label:{{seq}}</h1>
 
-      </div>
+<img src="data:image/png;base64,{{ result }}" width="500">
+
+        
+       
+ 
+
+    
+        
+      
+     </div>
     </div>
     <div id="content_footer"></div>
     <div id="footer">
@@ -60,5 +70,4 @@
   </div>
 </body>
 </html>
-
 
