@@ -15,19 +15,19 @@
       <div id="logo">
         <div id="logo_text">
           <!-- class="logo_colour", allows you to change the colour of the text -->
-          <h1><a href="{{ url_for('main') }}">Multilabel Classification of <span class="logo_colour">Peptides</span></a></h1>
+          <h1><a href="index.html">Multilabel Classification of <span class="logo_colour">Peptides</span></a></h1>
           <h2>Activity classification of peptides</h2>
         </div>
       </div>
       <div id="menubar">
         <ul id="menu">
           <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
-          <li class="selected"><a href="{{ url_for('main') }}">Home</a></li>
-	     <li><a href="{{ url_for('pred') }}">Activity Predictor</a></li>
+          <li class="selected"><a href="index.html">Home</a></li>
+	     <li><a href="{{ url_for('predict') }}">Activity Predictor</a></li>
           <li><a href="{{ url_for('datas') }}">Dataset</a></li>
           <li><a href="{{ url_for('help') }}">Help</a></li>
           <li><a href="{{ url_for('about') }}">About Us</a></li>
-
+          
         </ul>
       </div>
     </div>
@@ -47,7 +47,7 @@
           <li><a href="http://www.uniprot.org/">UniProt</a></li>
           <li><a href="http://crdd.osdd.net/servers/avppred/">AVPpred</a></li>
         </ul>
-
+      
       </div>
       <div id="content">
         <!-- insert the page content here -->
@@ -56,7 +56,7 @@
         <p>Classification will be based on sequence data provided of each peptide as input.The final output will be an open source software or a web application which classifies peptides as antiviral, antimicrobial, antifungal or a combination of the three.  </p>
         <p>M-CAMP makes the work of drug discovery easier. It carries an Open Source license and is aimed at helping scientists conduct research free of cost.</p>
         <p>Comprehensive documentation of the database can be obtained from the Help page. </p>
-
+        
         <h2>M-CAMP Features</h2>
         <ul>
           <li>Access AMP and Non-AMP sequences</li>
@@ -68,9 +68,8 @@
     </div>
     <div id="content_footer"></div>
     <div id="footer">
-      <a href="http://www.unipune.ac.in/">Pune University</a> | <a href="http://www.viit.ac.in/">VIIT Pune</a>
+     <a href="http://www.unipune.ac.in/">Pune University</a> | <a href="http://www.viit.ac.in/">VIIT Pune</a>
     </div>
   </div>
 </body>
 </html>
-
